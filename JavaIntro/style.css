@@ -1,5 +1,9 @@
-body {background-color: #206dd3;}
+body {background-color: #206dd3;
+margin: unset;}
 h1 {text-align: center;
 background-color: purple;
-color: #FFAA55;}
+color: #FFAA55;
+margin: unset;
+padding: 20px;}
 h2 {color: #AA0000;}
+div {margin: 8px;}
