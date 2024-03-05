@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Personal Portfolio Brody Hysell</title>
+  <link href="portfolio.css" rel="stylesheet" type="text/css" >
+<style>
+  form {background-color: #0088FF;
+       border: 1px solid #000000;
+       padding: 10px;
+       width: 50%;}
+  label {margin-top: 10px;
+        float: left;
+        text-align: right;
+        padding-right: 10px;}
+  input, textarea {width: 200px;
+            margin-top: 10px;
+           display: block;}
+  #NowSubmit {width: auto;
+             margin-left: 130px;}
+  input[type="radio"] {display: inline;
+                      width: unset;
+                      margin-left: unset;}
+  #radio2 {display: inline;
+          width: unset;
+          margin-left: unset;}
+  select {float: left;}
+  #save {text-align: left;}
+</style>
+</head>
+<body>
+<header><img src="_pictures/Webpage Header.png" alt="Banner" id="banner"></header>
+<nav>
+<a href="index.html"><img src="_pictures/1.png" alt="Home"></a><a href="about.html"><img src="_pictures/2.png" alt="About Me"></a><a href="resume.html"><img src="_pictures/3.png" alt="Resume"></a><a href="portfolio.html"><img src="_pictures/4.png" alt="Portfolio"></a><a href="contact.html"><img src="_pictures/5.png" alt="Contact"></a>
+</nav>
+<main>
+<h1>Send Something To Me</h1>
+<form method="post" action="http://webdevbasics.net/scripts/demo.php">
+<label for="yourName" id="needed">*Name:</label>
+<input type="text" name="yourName" id="yourName" required placeholder="your full name">
+<label for="yourEmail" id="needed">*E-mail:</label>
+<input type="email" name="yourEmail" id="yourEmail" required="required" placeholder="you@gmail.com">
+<label for="aboutYou">About You:</label>
+<textarea name="aboutYou" id="aboutYou" rows="2" cols="20" placeholder="You don't have to enter anything in this"></textarea>
+<label for="Question" id="needed">*What's Your <br>Question:</label><textarea name="Question" id="Question" rows="3" cols="20" required></textarea>
+<p>Please input your grade range:</p>
+<input type="radio" id="freshman" name="grade" value="grade">
+<label for="freshman">Freshman</label> <br>
+<input type="radio" id="sophmore" name="grade" value="grade" style="transform: translateX(-85px)">
+<label for="sophmore" style="transform: translateX(-85px)">Sophmore</label> <br>
+<input type="radio" id="junior" name="grade" value="grade" style="transform: translateX(-170px)">
+<label for="junior" style="transform: translateX(-170px)">Junior</label><br>
+<input type="radio" id="senior" name="grade" value="grade" style="transform: translateX(-220px)">
+<label for="senior" style="transform: translateX(-220px)">Senior</label><br>
+<label for="Gift" id="needed" style="transform: translateX(-280px)">*What did you think?</label>
+<select name="Gift" required="required" style="transform: translateX(-280px)">
+  <option>I liked it</option>
+  <option>It was decent</option>
+  <option>I didn't like it</option>
+</select>
+<input id="NowSubmit" type="submit">
+</form>
+</main>
+<footer>
+  Copyright @ BCH
+</footer>
+</body>
+</html>
