@@ -1,10 +1,18 @@
 body {background-color: #206dd3;
+    /*background-color: #2222AA;*/
 margin: unset;}
 h1 {text-align: center;
 background-color: purple;
 color: #FFAA55;
 margin: unset;
 padding: 20px;}
-h2 {color: #AA0000;}
-div {margin: 8px;}
-/*img {float: right;} 
+h2 {color: #AA0000;
+background-color: #206dd3;}
+div {margin: 0px 60px;
+padding: 16px;
+/*background-color: #206dd3;*/
+background-color: #2222AA;
+border-left: 5px solid #CCCCFF;
+border-right: 5px solid #CCCCFF;}
+img {/*float: right;*/
+display: block;} 
