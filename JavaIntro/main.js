@@ -9,4 +9,5 @@ function setError() {
 }
 myButton.onclick = () => {
     setError();
+    alert("ERROR ERROR ERROR");
 }
