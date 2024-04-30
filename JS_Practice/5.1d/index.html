@@ -16,7 +16,7 @@
 
 <!--[if gte mso 9]><xml>
 <mso:CustomDocumentProperties>
-<mso:Order msdt:dt="string">399846400.000000</mso:Order>
+<mso:Order msdt:dt="string">399846600.000000</mso:Order>
 <mso:ContentTypeId msdt:dt="string">0x0101009F1A1A9B9131484CB900844943E1876F</mso:ContentTypeId>
 </mso:CustomDocumentProperties>
 </xml><![endif]-->
@@ -49,7 +49,7 @@
                                 <label for="location">Location</label>
                             </td>
                             <td>
-                                <select name="location" id="location">
+                                <select name="location" id="location" onchange="fillState(this.value);">
                                     <option value=""></option>
                                     <option value="Salt Lake City">Salt Lake City</option>
                                     <option value="Summerlin">Summerlin</option>
@@ -174,23 +174,27 @@
             var firstName = document.getElementById('firstName').value;
             var lastName = document.getElementById('lastName').value;
             var found = document.getElementById('found').value;
-
-            testResults.innerHTML = "You entered " + firstName + " " + lastName + " for a name. You found us via " + found + ".";
+            testResults.innerHTML = "You entered " + firstName + " " + lastName
+                + " for a name. You found us via " + found + ".";
         }
 
         function fillState(location) {
             var state = document.getElementById('state');
-            if (state.value == null) {
-                if (location == 'Salt Lake City') {
+            if (state.value == '') {
+                // add city and state logic
+                if (location == 'Salt Lake City')
+                {
                     state.value = 'UT';
                 }
-                else if (location == 'Summerlin') {
+                else if (location == 'Summerlin')
+                {
                     state.value = 'NV';
                 }
-                else {
+                else
+                {
                     state.value = null;
                 }
-            }
+                }
         }
 
         function convertUpper(text, field) {

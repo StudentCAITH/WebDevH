@@ -16,7 +16,7 @@
 
 <!--[if gte mso 9]><xml>
 <mso:CustomDocumentProperties>
-<mso:Order msdt:dt="string">399846400.000000</mso:Order>
+<mso:Order msdt:dt="string">399847000.000000</mso:Order>
 <mso:ContentTypeId msdt:dt="string">0x0101009F1A1A9B9131484CB900844943E1876F</mso:ContentTypeId>
 </mso:CustomDocumentProperties>
 </xml><![endif]-->
@@ -51,8 +51,8 @@
                             <td>
                                 <select name="location" id="location">
                                     <option value=""></option>
-                                    <option value="Salt Lake City">Salt Lake City</option>
-                                    <option value="Summerlin">Summerlin</option>
+                                    <option value="Salt Lake City" onclick="fillState('Salt Lake City');">Salt Lake City</option>
+                                    <option value="Summerlin" onclick="fillState('Summerlin');">Summerlin</option>
                                 </select>
                             </td>
                         </tr><tr>
@@ -108,7 +108,7 @@
                                 <label for="password">Password</label>
                             </td>
                             <td>
-                                <input type="text" name="password" id="password" />
+                                <input type="password" name="password" id="password" />
                             </td>
                         </tr>
                        </table>
@@ -174,13 +174,13 @@
             var firstName = document.getElementById('firstName').value;
             var lastName = document.getElementById('lastName').value;
             var found = document.getElementById('found').value;
-
-            testResults.innerHTML = "You entered " + firstName + " " + lastName + " for a name. You found us via " + found + ".";
+            testResults.innerHTML = "You entered " + firstName + " " + lastName
+                + " for a name. You found us via " + found + ".";
         }
 
         function fillState(location) {
             var state = document.getElementById('state');
-            if (state.value == null) {
+            if (state.value == '') {
                 if (location == 'Salt Lake City') {
                     state.value = 'UT';
                 }
@@ -188,7 +188,7 @@
                     state.value = 'NV';
                 }
                 else {
-                    state.value = null;
+                    state.value = '';
                 }
             }
         }
@@ -197,9 +197,12 @@
             document.getElementById(field).value = text.toUpperCase();
         }
 
+        function convertLower(text, field) {
+            document.getElementById(field).value = text.toLowerCase();
+        }
         function checkCity(city) {
-
-            if (city == 'Las Vegas' || city == 'North Las Vegas' || city == 'Henderson') {
+            city = city.toUpperCase();
+            if (city == 'LAS VEGAS' || city == 'NORTH LAS VEGAS' || city == 'HENDERSON') {
                 document.getElementById('testResults').innerHTML = 'The Summerlin location will open in 2018';
             }
 
